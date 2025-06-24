@@ -11,7 +11,7 @@ const arr = [1,5,2,6,4]
 // console.log(arr.slice(1,3))
 // console.log(arr)
 
-// console.log(arr.splice(1,))
+// console.log(arr.splice(1,3))
 // console.log(arr)
 
 const marvelheros = ["thor", "ironman", "spiderman"];
@@ -24,9 +24,9 @@ const allheros = [...marvelheros , ...dcheros]
 // console.log(allheros);
 
 
-console.log(Array.isArray("daksh"))
-console.log(Array.from("daksh"))        //making array
-console.log(Array.from({name: "daksh"}))      //--[](bcz use nhi pta keys
+// console.log(Array.isArray("daksh"))
+// console.log(Array.from("daksh"))        //making array
+// console.log(Array.from({name: "daksh"}))      //return[](bcz use nhi pta keys
 //                                      ka array bnana hai ya values ka)
 
 
@@ -34,4 +34,10 @@ const score1 = 100;
 const score2 = 200;
 const score3 = 300;
 
-console.log(Array.of(score1,score2,score3))
+// console.log(Array.of(score1,score2,score3))
+
+// console.log(arr.sort());
+// console.log(typeof(arr))
+
+console.log(arr.reverse())
+
