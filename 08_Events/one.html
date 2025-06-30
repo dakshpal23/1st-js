@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;" >
+    <h1>images</h1>
+    <div>
+        <ul id="images">
+            <li><img width="350px" id="nature" src="https://images.unsplash.com/photo-1491497895121-1334fc14d8c9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bmF0dXJlJTIwb2YlMjBpbmRpYXxlbnwwfHwwfHx8MA%3D%3D" alt=""></li>
+            <li><img id="Game_of_Thrones" src="https://upload.wikimedia.org/wikipedia/en/d/d8/Game_of_Thrones_title_card.jpg" alt=""></li>
+            <li><img width="350px" id="MotherOfDragons" src="https://c8.alamy.com/comp/2F5F0WT/game-of-thrones-hbo-tv-2011-series-with-emilia-clarke-as-daenerys-leading-the-dothraki-2F5F0WT.jpg" alt=""></li>
+            <li><a id="google" href="https://google.com">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+
+     // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+
+    // document.getElementById('MotherOfDragons').addEventListener('click',function(e){
+    //     console.log('girl clicked')
+    //     e.stopPropagation();            // ye bubble nhi hone dega 
+    // },false)
+
+    // Here true = capturing(means it goes from top to bottom) and false = bubbling( bottom to top)
+    //But by default value is false( bubbling event )
+
+    // document.getElementById('images').addEventListener('click',function(){
+    //     console.log('All images clicked')
+    // },false)
+    
+    document.querySelector('#images').addEventListener('click', (e) => {
+        if (e.target.tagName === 'IMG') {
+            const remove = e.target.parentNode;
+            remove.remove();
+        }
+        
+    },false)
+
+</script>
+</html>

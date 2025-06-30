@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS</title>
+</head>
+<body>
+    <h1>Hey Daksh here...</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const Namaste = () => {
+        // console.log('Namaste India');
+    }
+    setTimeout(Namaste, 2000);
+
+    const h1 = document.querySelector('h1')
+    const changedText = () => {
+        h1.innerHTML = "Daksh went Home"
+    }
+
+    const stopChange = setTimeout(changedText,3000)
+
+    const button = document.querySelector('button')
+    button.addEventListener('click',() => {
+        clearTimeout(stopChange)
+    })
+
+</script>
+</html>

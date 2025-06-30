@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS</title>
+</head>
+<body>
+    <h1>Welcome to our Website</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    const start = document.querySelector('#start')
+    const stop = document.querySelector('#stop')
+    const body = document.querySelector('body')
+    
+    let changedDate;
+    function rgbValues() {
+        let r = Math.floor(Math.random()*255)
+        let g = Math.floor(Math.random()*255)
+        let b = Math.floor(Math.random()*255)
+        return `rgb(${r},${g},${b})`
+    }
+    
+
+    const changingColor = () => {
+        body.style.backgroundColor = rgbValues();
+    }
+    
+    start.addEventListener('click',() => {
+        if(!changedDate)
+        {
+            changedDate = setInterval(changingColor,1000)
+        }
+    })
+
+    stop.addEventListener('click',() => {
+        clearInterval(changedDate)
+        changedDate = null;
+    })
+</script>
+</html>
