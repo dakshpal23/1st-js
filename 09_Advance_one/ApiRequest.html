@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f2f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .nature-images img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .followers {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .followers h2 {
+      font-size: 20px;
+      color: #333;
+    }
+
+    .followers span {
+      font-weight: bold;
+      color: #007bff;
+    }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="nature-images"> </div>
+        <div class="followers">
+            <h2>Followers: <span></span> </h2>
+        </div>
+    </div>
+</body>
+<script>
+    const requestUrl = `https://api.github.com/users/hiteshchoudhary`;
+    const NoOfFollowers = document.querySelector('span')
+    const img = document.querySelector('.nature-images')
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requestUrl)
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4){
+            const data = JSON.parse(this.responseText)
+            console.log(data)
+            NoOfFollowers.innerHTML = data.followers;
+            img.innerHTML = `<img src="${data.avatar_url} alt="">`
+        };
+        
+    }
+    xhr.send();
+</script>
+</html>
